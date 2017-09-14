@@ -44,8 +44,8 @@ public class LonelyTwitterActivity extends Activity {
 
 
 
-				Tweet tweet = new ImportantTweet("");
-				Tweet tweet1 = new NormalTweet("Hi");
+				ImportantTweet tweet = new ImportantTweet("");
+				NormalTweet tweet1 = new NormalTweet("Hi");
 				try {
 					tweet.setMessage("Hello");
 				}
@@ -53,7 +53,7 @@ public class LonelyTwitterActivity extends Activity {
 					//e.printStackTrace();
 				}
 				Tweetable tweet3 = new ImportantTweet("");
-				ArrayList<Tweet> tweetlist = new ArrayList<Tweet>();
+				ArrayList<Tweet> tweetList = new ArrayList<Tweet>();
                 tweetList.add(tweet);
                 tweetList.add(tweet);
                 //log.d("","The isImportant method returns" + tweet.isImportant());
