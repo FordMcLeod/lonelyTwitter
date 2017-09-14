@@ -1,17 +1,12 @@
 package ca.ualberta.cs.lonelytwitter;
 
-/**
- * Created by owenm_000 on 9/13/2017.
- */
-
-import java.util.Date;package ca.ualberta.cs.lonelytwitter;
+import java.util.Date;
 
 /**
  * Created by owenm_000 on 9/13/2017.
  */
-        import java.util.Date;
 
-public abstract class Mood {
+ public abstract class Mood {
     private String mood;
     private Date date;
 
@@ -26,11 +21,11 @@ public abstract class Mood {
     public String getMood(){
         return mood;
     }
-    public void setMood(String message) throws MoodNotSupported{
-        if (message.toUpperCase().equals("Hungry") ){
+    public void setMood(String mood) throws MoodNotSupported{
+        if (mood.toUpperCase().equals("Hungry") ){
             this.mood = "Hungry";
         }
-        else if (message.toUpperCase().equals("Thirsty")){
+        else if (mood.toUpperCase().equals("Thirsty")){
             this.mood = "Thirsty";
         }
         else {
@@ -42,5 +37,5 @@ public abstract class Mood {
         return date;
     }
 
-    public abstract Boolean isImportant();
+    public abstract Boolean isEmpty();
 }
