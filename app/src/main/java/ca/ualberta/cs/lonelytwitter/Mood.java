@@ -6,7 +6,7 @@ import java.util.Date;
  * Created by owenm_000 on 9/13/2017.
  */
 
- public abstract class Mood {
+ public abstract class Mood  {
     private String mood;
     private Date date;
 
@@ -37,5 +37,5 @@ import java.util.Date;
         return date;
     }
 
-    public abstract Boolean isEmpty();
+    public abstract BadMood isEmpty();
 }
