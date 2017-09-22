@@ -11,6 +11,7 @@ public abstract class Tweet implements Tweetable {
 
     public Tweet(String message){
         date = new Date();
+        this.message = message;
     }
     public Tweet(String message, Date date){
         this.date = date;
@@ -34,4 +35,11 @@ public abstract class Tweet implements Tweetable {
     }
 
     public abstract Boolean isImportant();
+
+    public void setDate(Date date) {this.date=date;}
+
+    @Override
+    public String toString() {
+        return date.toString() + " | " + message;
+    }
 }
