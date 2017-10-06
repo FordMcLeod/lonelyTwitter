@@ -65,6 +65,10 @@ public class LonelyTwitterActivity extends Activity {
 			public void onClick(View v) {
                 String queryString = bodyText.getText().toString();
                 setResult(RESULT_OK);
+                Gson gson = new Gson();
+                String json = gson.toJson(queryString);
+                ElasticsearchTweetController.GetTweetsTask getTweetsTask = new ElasticsearchTweetController.GetTweetsTask();
+                getTweetsTask.execute(json);
 				adapter.notifyDataSetChanged();
 			}
 		});
@@ -78,7 +82,7 @@ public class LonelyTwitterActivity extends Activity {
 		super.onStart();
 		//loadFromFile(); // TODO replace this with elastic search
 		ElasticsearchTweetController.GetTweetsTask getTweetsTask = new ElasticsearchTweetController.GetTweetsTask();
-		getTweetsTask.execute("",queryString);
+        getTweetsTask.execute("");
 		try{
 			tweetList =  getTweetsTask.get();
 		}
