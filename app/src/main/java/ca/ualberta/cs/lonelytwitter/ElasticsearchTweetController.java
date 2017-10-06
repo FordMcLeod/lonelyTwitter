@@ -15,7 +15,7 @@ import io.searchbox.core.Index;
 import io.searchbox.core.Search;
 import io.searchbox.core.SearchResult;
 import io.searchbox.core.search.aggregation.PercentileRanksAggregation;
-import
+
 
 /**
  * Created by romansky on 10/20/16.
@@ -64,6 +64,7 @@ public class ElasticsearchTweetController {
             Search search = new Search.Builder(search_parameters[0])
                             .addIndex("testing")
                             .addType("tweet")
+                            .equals(search_parameters[1])
                             .build();
             try {
                 SearchResult result = client.execute(search);
